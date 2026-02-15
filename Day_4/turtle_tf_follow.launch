@@ -1,0 +1,30 @@
+<launch>
+    <!-- 启动turtlesim仿真器 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    
+    <!-- 启动turtle1的TF广播器 -->
+    <node pkg="learning_tf" type="turtle_tf_broadcaster.py" name="broadcaster_turtle1">
+        <param name="turtle" value="turtle1"/>  <!-- 指定海龟名称参数 -->
+    </node>
+    
+    <!-- 启动turtle2的TF广播器 -->
+    <node pkg="learning_tf" type="turtle_tf_broadcaster.py" name="broadcaster_turtle2">
+        <param name="turtle" value="turtle2"/>
+    </node>
+    
+    <!-- 启动turtle3的TF广播器 -->
+    <node pkg="learning_tf" type="turtle_tf_broadcaster.py" name="broadcaster_turtle3">
+        <param name="turtle" value="turtle3"/>
+    </node>
+    
+    <!-- 启动turtle4的TF广播器 -->
+    <node pkg="learning_tf" type="turtle_tf_broadcaster.py" name="broadcaster_turtle4">
+        <param name="turtle" value="turtle4"/>
+    </node>
+    
+    <!-- 启动生成海龟和跟随逻辑的节点 -->
+    <node pkg="learning_tf" type="turtle_spawn_and_follow.py" name="spawn_and_follow" output="screen"/>
+    
+    <!-- 启动键盘控制节点（控制turtle1） -->
+    <node pkg="turtlesim" type="turtle_teleop_key" name="teleop_key" output="screen"/>
+</launch>

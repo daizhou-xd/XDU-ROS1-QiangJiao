@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node">
+        <param name="background_r" value="255"/>
+        <param name="background_g" value="255"/>
+        <param name="background_b" value="255"/>
+    </node>
+    <node pkg="hello_vscode" type="circle.py" name="turtle_circle_controller"/>
+    <node pkg="hello_vscode" type="pose_listener.py" name="turtle_pose_printer"/>
+    
+</launch>

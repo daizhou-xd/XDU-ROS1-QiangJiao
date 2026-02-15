@@ -1,0 +1,15 @@
+<launch>
+  <!-- 启动乌龟仿真节点 -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node">
+    <param name="background_r" value="255"/>
+    <param name="background_g" value="255"/>
+    <param name="background_b" value="255"/>
+  </node>
+
+  <!-- 启动五个乌龟控制节点 -->
+  <node pkg="hello_vscode" type="blue_ring.py" name="blue_ring_controller" output="screen"/>
+  <node pkg="hello_vscode" type="black_ring.py" name="black_ring_controller" output="screen"/>
+  <node pkg="hello_vscode" type="red_ring.py" name="red_ring_controller" output="screen"/>
+  <node pkg="hello_vscode" type="yellow_ring.py" name="yellow_ring_controller" output="screen"/>
+  <node pkg="hello_vscode" type="green_ring.py" name="green_ring_controller" output="screen"/>
+</launch>
